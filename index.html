@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Search something useful today..</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-950 flex flex-col h-screen max-h-screen relative">
+    <header class="bg-gradient-to-r from-orange-400 to-pink-500 px-4 py-2 flex flex-col justify-center">
+        <nav class="flex justify-center md:block">
+            <ul class="[&>*]:inline-block md:flex justify-center gap-3">
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://myaccount.google.com/?hl=en_GB&utm_source=OGB&utm_medium=act&gar=WzEyMF0"
+                        class="relative group/link">
+                        <img class="rounded-full" width="25"
+                            src="https://lh3.googleusercontent.com/a/ACg8ocKBygHx9ODqbM2z_j2z64yuEkEUKlG04uoqgzp7xEt3fe8dSc6n=s432-c-no"
+                            alt="Manage Account">
+                        <span
+                            class="text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Manage
+                            Account</span>
+                    </a>
+                </li>
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://mail.google.com/mail/u/0/#inbox" class="relative group/link">
+                        <img class="rounded-full" width="25" src="./images/gmail.png" alt="Gmail">
+                        <span
+                            class="text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Gmail</span>
+                    </a>
+                </li>
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://drive.google.com/drive/u/0/home" class="relative group/link">
+                        <img class="rounded-full" width="25" src="./images/google-drive.png" alt="Google Drive">
+                        <span
+                            class="text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Google
+                            Drive</span>
+                    </a>
+                </li>
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://www.youtube.com/" class="relative group/link">
+                        <img class="rounded-full" width="25" src="./images/youtube.png" alt="Youtube">
+                        <span
+                            class="z-10 text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Youtube</span>
+                    </a>
+                </li>
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://keep.google.com/u/0/" class="relative group/link">
+                        <img class="rounded-full" width="25" src="./images/keeps.png" alt="Google Keep">
+                        <span
+                            class="text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Google
+                            Keep</span>
+                    </a>
+                </li>
+                <li class="bg-slate-50 rounded-full p-1">
+                    <a href="https://about.google/products/" class="relative group/link">
+                        <img class="rounded-full" width="25" src="./images/more.png" alt="More">
+                        <span
+                            class="text-xs hidden group-hover/link:block bg-slate-900 mt-3 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">More</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </header>
+    <div id="offcanvas" class="absolute left-0 top-0 transition-transform -translate-y-full w-full h-full z-10 flex justify-center items-center">
+        <div class="w-3/4 h-3/4 bg-slate-900 rounded p-4 text-white border border-white flex flex-col">
+            <div class="flex justify-end">
+                <button onclick="toggleOffCanvas(false)"><img src="./images/cross.png" alt="Close" width="25"></button>
+            </div>
+            <div class="flex flex-col gap-5 flex-grow w-3/4 mx-auto">
+                <textarea class="rounded p-2 resize-none w-full flex-grow bg-black text-white border border-white" name="newtaskinput" id="newtaskinput" placeholder="Add a new task..."></textarea>
+                <div class="flex justify-between">
+                    <button class="inline-block w-fit px-4 py-2 bg-green-500 rounded border-none outline-none" onclick="addTasks()">Add task</button>
+                <span id="feedback-messsage" class="text-xl"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="flex-grow p-2 md:flex md:flex-row-reverse md:gap-2">
+       
+        <section class="mb-2 md:mb-0 md:w-[50%] border h-[100%] rounded bg-slate-900 flex flex-col gap-2 p-2">
+            <h1 class="text-xl text-pink-500 text-center font-bold">Search</h1>
+            <hr>
+            <div class="flex flex-col gap-2 justify-center h-full">
+                <img class="mx-auto" src="./images/google.png" alt="Google Logo" width="200">
+                <div class="searchbox">
+                    <form class="flex flex-col gap-2 justify-between items-center" action="#" id="searchform">
+                        <input class="w-full md:w-[80%] rounded-lg p-2 outline-none text-black" type="text" name="search"
+                            id="search" accesskey="m" placeholder="Press ALT+M to search">
+                        <button class="bg-gradient-to-r from-blue-800 to-indigo-900 mt-2 flex gap-1 text-lg text-white border border-slate-300 rounded py-2 px-4"
+                             id="searchbutton">
+                            Search
+                            <img src="./images/search.png" alt="Search" width="30">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="md:w-[50%] text-green-500 border h-[100%] rounded bg-slate-900 flex flex-col gap-2 p-2">
+            <h1 class="text-xl text-center font-bold">Task Manager</h1>
+            <hr>
+            <div id="tasks" class="overflow-y-auto flex-grow flex flex-col gap-2 text-white relative h-1"></div>
+            <div class="addtask flex justify-center gap-2">
+                <button class="group/addtask relative" onclick="toggleOffCanvas(true)"><img width="25" src="./images/add.png" alt="Add Task">
+                    <span class="z-10 text-xs hidden group-hover/addtask:block bg-slate-900 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Add new Task</span>
+                </button>
+                <button class="group/addtask relative" onclick="localStorage.removeItem('tasks');renderTasks();"><img width="25" src="./images/cross.png" alt="Add Task">
+                    <span class="z-10 text-xs hidden group-hover/addtask:block bg-slate-900 text-white absolute top-full whitespace-nowrap rounded-sm p-2 left-1/2 translate-x-[-50%]">Clear All</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gradient-to-r from-teal-400 to-blue-500 p-1 md:px-4 md:py-2 md:text-lg text-center mt-auto">
+        Time remaining: <b><span id="countdown"></span></b>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
